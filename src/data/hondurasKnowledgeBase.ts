@@ -2,9 +2,9 @@
 
 export interface EconomicContext {
   nse_level: string;
-  monthly_income_range: [number, number]; // En lempiras
+  monthly_income_range: [number, number]; // En pesos
   telecom_budget_percentage: number;
-  typical_telecom_spend: [number, number]; // En lempiras
+  typical_telecom_spend: [number, number]; // En pesos
   payment_preference: 'prepago' | 'postpago' | 'mixed';
   price_sensitivity: 'very_high' | 'high' | 'medium' | 'low';
 }
@@ -118,7 +118,7 @@ export const LANGUAGE_PATTERNS: Record<string, LanguagePatterns> = {
     ],
     price_related: [
       'Está muy caro', '¿Y costos ocultos?', 'Tengo que ver mi presupuesto',
-      'Con mi sueldo de [X] lempiras', 'Eso son [X] lempiras al año',
+      'Con mi sueldo de [X] pesos', 'Eso son [X] pesos al año',
       'Prefiero algo más económico'
     ],
     quality_related: [
