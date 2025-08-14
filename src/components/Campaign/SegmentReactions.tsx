@@ -1,6 +1,6 @@
 // components/Campaign/SegmentReactions.tsx - Muestra reacciones detalladas por segmento
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { 
   AlertCircle, CheckCircle, 
   MessageCircle, Lightbulb, ThumbsUp, ThumbsDown, Star,
@@ -9,7 +9,7 @@ import {
 import { cn } from '../../lib/utils';
 import type { SegmentReaction, CampaignConcept, EvaluationVariable } from '../../types/campaign.types';
 import { EVALUATION_VARIABLES } from '../../types/campaign.types';
-import { TigoArchetype } from '../../types/persona.types';
+import { NestleArchetype } from '../../types/persona.types';
 
 interface SegmentReactionsProps {
   concept: CampaignConcept;
@@ -31,12 +31,12 @@ const SegmentReactions: React.FC<SegmentReactionsProps> = ({
 
   // Mapeo de arquetipos a nombres y colores
   const archetypeInfo = {
-    [TigoArchetype.PROFESIONAL]: { name: 'Profesional', color: 'blue', icon: '💼' },
-    [TigoArchetype.CONTROLADOR]: { name: 'Controlador', color: 'green', icon: '📊' },
-    [TigoArchetype.EMPRENDEDOR]: { name: 'Emprendedor', color: 'orange', icon: '🚀' },
-    [TigoArchetype.GOMOSO_EXPLORADOR]: { name: 'Gomoso/Explorador', color: 'purple', icon: '🎨' },
-    [TigoArchetype.PRAGMATICO]: { name: 'Pragmático', color: 'yellow', icon: '⚡' },
-    [TigoArchetype.RESIGNADO]: { name: 'Resignado', color: 'gray', icon: '🌾' }
+    [NestleArchetype.PROFESIONAL]: { name: 'Profesional', color: 'blue', icon: '💼' },
+    [NestleArchetype.CONTROLADOR]: { name: 'Controlador', color: 'green', icon: '📊' },
+    [NestleArchetype.EMPRENDEDOR]: { name: 'Emprendedor', color: 'orange', icon: '🚀' },
+    [NestleArchetype.GOMOSO_EXPLORADOR]: { name: 'Gomoso/Explorador', color: 'purple', icon: '🎨' },
+    [NestleArchetype.PRAGMATICO]: { name: 'Pragmático', color: 'yellow', icon: '⚡' },
+    [NestleArchetype.RESIGNADO]: { name: 'Resignado', color: 'gray', icon: '🌾' }
   };
 
   const getSentimentIcon = (sentiment: string) => {
