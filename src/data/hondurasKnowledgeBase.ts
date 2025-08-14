@@ -2,9 +2,9 @@
 
 export interface EconomicContext {
   nse_level: string;
-  monthly_income_range: [number, number]; // En pesos
+  monthly_income_range: [number, number]; // En lempiras
   telecom_budget_percentage: number;
-  typical_grocery_spend: [number, number]; // En pesos
+  typical_telecom_spend: [number, number]; // En lempiras
   payment_preference: 'prepago' | 'postpago' | 'mixed';
   price_sensitivity: 'very_high' | 'high' | 'medium' | 'low';
 }
@@ -35,7 +35,7 @@ export const ECONOMIC_SEGMENTS: Record<string, EconomicContext> = {
     nse_level: 'AB',
     monthly_income_range: [25000, 50000], // L25k-50k+
     telecom_budget_percentage: 4,
-    typical_grocery_spend: [1000, 2000],
+    typical_telecom_spend: [1000, 2000],
     payment_preference: 'postpago',
     price_sensitivity: 'low'
   },
@@ -43,7 +43,7 @@ export const ECONOMIC_SEGMENTS: Record<string, EconomicContext> = {
     nse_level: 'C+',
     monthly_income_range: [15000, 25000], // L15k-25k
     telecom_budget_percentage: 5,
-    typical_grocery_spend: [750, 1250],
+    typical_telecom_spend: [750, 1250],
     payment_preference: 'postpago',
     price_sensitivity: 'medium'
   },
@@ -51,7 +51,7 @@ export const ECONOMIC_SEGMENTS: Record<string, EconomicContext> = {
     nse_level: 'C',
     monthly_income_range: [10000, 15000], // L10k-15k
     telecom_budget_percentage: 4,
-    typical_grocery_spend: [400, 600],
+    typical_telecom_spend: [400, 600],
     payment_preference: 'mixed',
     price_sensitivity: 'medium'
   },
@@ -59,7 +59,7 @@ export const ECONOMIC_SEGMENTS: Record<string, EconomicContext> = {
     nse_level: 'C-',
     monthly_income_range: [7000, 10000], // L7k-10k
     telecom_budget_percentage: 3,
-    typical_grocery_spend: [210, 300],
+    typical_telecom_spend: [210, 300],
     payment_preference: 'prepago',
     price_sensitivity: 'high'
   },
@@ -67,7 +67,7 @@ export const ECONOMIC_SEGMENTS: Record<string, EconomicContext> = {
     nse_level: 'D',
     monthly_income_range: [5000, 7000], // L5k-7k
     telecom_budget_percentage: 3,
-    typical_grocery_spend: [150, 210],
+    typical_telecom_spend: [150, 210],
     payment_preference: 'prepago',
     price_sensitivity: 'very_high'
   }
@@ -118,7 +118,7 @@ export const LANGUAGE_PATTERNS: Record<string, LanguagePatterns> = {
     ],
     price_related: [
       'Está muy caro', '¿Y costos ocultos?', 'Tengo que ver mi presupuesto',
-      'Con mi sueldo de [X] pesos', 'Eso son [X] pesos al año',
+      'Con mi sueldo de [X] lempiras', 'Eso son [X] lempiras al año',
       'Prefiero algo más económico'
     ],
     quality_related: [

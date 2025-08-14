@@ -1,7 +1,6 @@
 // components/Modules/SyntheticModule.tsx - Módulo de Evaluación de Campañas y Conceptos
 
-import React, { useState, useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, Users, Download, Settings, Lightbulb, 
@@ -19,7 +18,7 @@ import HumanArchetypeChat from '../Campaign/HumanArchetypeChat';
 import { CampaignEvaluator } from '../../utils/campaignEvaluator';
 import type { CampaignConcept, EvaluationSession, SegmentReaction } from '../../types/campaign.types';
 import type { SyntheticPersona } from '../../types/persona.types';
-import { NestleArchetype } from '../../types/persona.types';
+import { TigoArchetype } from '../../types/persona.types';
 
 type ViewState = 'welcome' | 'concept_form' | 'archetype_selector' | 'evaluating' | 'results';
 
@@ -243,7 +242,7 @@ const SyntheticModule: React.FC = () => {
                     age: reaction.persona_context.age,
                     location: reaction.persona_context.city,
                     segment: reaction.archetype,
-                    personality_traits: [reaction.persona_context.characteristics.psychographics],
+                    personality_traits: [reaction.persona_context.personality],
                     evaluation_context: reaction, // Incluir contexto de evaluación
                     concept: currentSession.concept // Incluir el concepto evaluado
                   }));
@@ -504,13 +503,13 @@ const SyntheticModule: React.FC = () => {
             <div className="grid gap-4 md:grid-cols-2">
               {currentSession.reactions.map((reaction) => {
                 const info = {
-                  [NestleArchetype.PROFESIONAL]: { name: 'Profesional', color: 'blue', icon: '💼', bg: 'from-blue-500 to-blue-600' },
-                  [NestleArchetype.CONTROLADOR]: { name: 'Controlador', color: 'green', icon: '📊', bg: 'from-green-500 to-green-600' },
-                  [NestleArchetype.EMPRENDEDOR]: { name: 'Emprendedor', color: 'orange', icon: '🚀', bg: 'from-orange-500 to-orange-600' },
-                  [NestleArchetype.GOMOSO_EXPLORADOR]: { name: 'Gomoso/Explorador', color: 'purple', icon: '🎨', bg: 'from-purple-500 to-purple-600' },
-                  [NestleArchetype.PRAGMATICO]: { name: 'Pragmático', color: 'yellow', icon: '⚡', bg: 'from-yellow-500 to-yellow-600' },
-                  [NestleArchetype.RESIGNADO]: { name: 'Resignado', color: 'gray', icon: '🌾', bg: 'from-gray-500 to-gray-600' }
-                }[reaction.archetype as keyof typeof NestleArchetype] || { name: 'Unknown', color: 'gray', icon: '👤', bg: 'from-gray-500 to-gray-600' };
+                  [TigoArchetype.PROFESIONAL]: { name: 'Profesional', color: 'blue', icon: '💼', bg: 'from-blue-500 to-blue-600' },
+                  [TigoArchetype.CONTROLADOR]: { name: 'Controlador', color: 'green', icon: '📊', bg: 'from-green-500 to-green-600' },
+                  [TigoArchetype.EMPRENDEDOR]: { name: 'Emprendedor', color: 'orange', icon: '🚀', bg: 'from-orange-500 to-orange-600' },
+                  [TigoArchetype.GOMOSO_EXPLORADOR]: { name: 'Gomoso/Explorador', color: 'purple', icon: '🎨', bg: 'from-purple-500 to-purple-600' },
+                  [TigoArchetype.PRAGMATICO]: { name: 'Pragmático', color: 'yellow', icon: '⚡', bg: 'from-yellow-500 to-yellow-600' },
+                  [TigoArchetype.RESIGNADO]: { name: 'Resignado', color: 'gray', icon: '🌾', bg: 'from-gray-500 to-gray-600' }
+                }[reaction.archetype as keyof typeof TigoArchetype] || { name: 'Unknown', color: 'gray', icon: '👤', bg: 'from-gray-500 to-gray-600' };
 
                 return (
                   <div key={reaction.archetype} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
